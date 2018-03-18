@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image,ScrollView, FlatList, TouchableOpacity } from 'react-native';
-
+import { Icon } from 'react-native-elements';
 
 import {SOCIAL_FEED_MOCK_DATA} from '../../assets/SOCIAL_FEED_MOCK_DATA'
 import { Ionicons } from '@expo/vector-icons';
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { SimpleLineIcons, MaterialCommunityIcons,  Entypo } from '@expo/vector-icons';
 
 
 import { Font } from 'expo';
@@ -14,8 +14,8 @@ import { Font } from 'expo';
 export default class SocialFeedScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
-    title: 'MacyDaug',
-    headerTintColor: '#03A9F4',
+    title: 'Macygram',
+    headerTintColor: '#BC261A',
     headerTitleStyle: {
       fontSize: 20,
     },
@@ -23,19 +23,12 @@ export default class SocialFeedScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    
 
-    const {liked } = this.props;
-
-    state = {
-      fontLoaded: false,
-    };
-    
     this.state = {
       commented: false,
       liked: false,
-
-      };
+      fontLoaded:false,
+    };
   }
   async componentDidMount() {
     await Font.loadAsync({
@@ -46,15 +39,15 @@ export default class SocialFeedScreen extends React.Component {
 
 
 
-   // this will render one post
-   renderItem = ({item}) => {
+  // this will render one post
+  renderItem = ({item}) => {
 
-     const { liked } = this.state
+    const { liked, commented } = this.state
 
 
     return(  
-       <View style = { styles.itemContainer} key={item}  >
-         <View style={styles.headerContainer}>
+      <View style = { styles.itemContainer} key={item}  >
+        <View style={styles.headerContainer}>
           <Image 
             source={{uri: item.image}}
             style={{
@@ -67,7 +60,7 @@ export default class SocialFeedScreen extends React.Component {
         <View style={styles.nameLocationContainer}>
           <TouchableOpacity style = {styles.nameContainer}
             // onPress={() => navigate('FriendProfile',{user: item.user} )}
-         > 
+          > 
             <Text style={styles.nameAndLocationContainer}> {item.name} </Text>  
           </TouchableOpacity>  
             <Text style={styles.nameAndLocationContainer}> {item.location}</Text>
@@ -76,78 +69,78 @@ export default class SocialFeedScreen extends React.Component {
       </View>
         
     {/* <TouchableOpacity  onPress={() => navigate('Post',{ post: item })}> */}
-     <View style={styles.postContentContainer}>
-       <Image
-         source = {{uri: item.post["image"]}} 
+    <View style={styles.postContentContainer}>
+      <Image
+        source = {{uri: item.post["image"]}} 
          style = {{
           width: '100%',
           height: 430,
-
-         }}
+        }}
       />
 
       
         <View style = {styles.captionContainer}>
-         <Text  style = {styles.descriptonText}  > {item.post["caption"]}</Text>
-       </View>
-       
-     </View> 
+        <Text  style = {styles.descriptonText}  > {item.post["caption"]}</Text>
+      </View>
+      
+    </View> 
    {/* </TouchableOpacity> */}
   
       <View style = {styles.bottomContainer}>
          {/* <Text> {item.date}</Text> */}
      {/* <TouchableOpacity  onPress={() => navigate('Post',{ post: item })}> */}
-       <View style= {styles.iconButtonContainer}>
-         <Ionicons
+      <View style= {styles.iconButtonContainer}>
+        <Icon
           name="ios-chatbubbles-outline"
           size={30}
+          type="ionicon"
           color='#085947'
           style={{paddingRight: 1}}
         />
         <Text style={styles.postActionText}>{item.comments ? item.comments.length : 0}</Text>
-       
-      {/* </TouchableOpacity> */}
-      <TouchableOpacity  onPress={() => {  console.log('like pressed' + liked) 
-        this.setState({ liked: !this.state.liked }); }} >
-         <View style={[styles.iconButtonContainer]}>
-           <Ionicons
-             name={liked ? "ios-heart" : "ios-heart-outline"}
-             color={liked ? 'red' : 'black'} size={30} />
-             <Text style={styles.postButtonText}>{item.likes}</Text>
-         </View>
-     </TouchableOpacity> 
-     </View> 
 
-    <View style = {styles.priceContainer }>
-       <Text style = {styles.priceText}> {item.post["price"]}</Text>
+        <View style={[styles.iconButtonContainer]}>
+          <Icon
+            name={liked ? "ios-heart" : "ios-heart-outline"}
+            color={liked ? 'red' : null} type="ionicon" size={30} 
+            onPress={() => this.setState({ liked: !liked })}
+          />
+            <Text style={styles.postButtonText}>{item.likes}</Text>
+        </View>
     </View> 
 
-   <View style = {styles.buyButtonContainer}>
-   <Ionicons
-             name={liked ? "md-cart" : "ios-cart-outline"}
-             color={liked ? 'red' : 'black'} size={35} />
-             <Text style={styles.postButtonText}>{item.likes}</Text>    
-   </View>
+    <View style = {styles.priceContainer }>
+        <Text style = {styles.priceText}> {item.post["price"]}</Text>
+    </View> 
+
+    <View style = {styles.buyButtonContainer}>
+      <Icon
+            type = "ionicon"
+            name={liked ? "md-cart" : "ios-cart-outline"}
+            color={liked ? 'red' : 'black'} size={35} 
+        />
+        <Text style={styles.postButtonText}>{item.likes}</Text>    
+    </View>
     
     
     </View>
 
     <View style = {styles.datePostedContainer}>
-       <Text> {item.post["date"]}</Text>
+        <Text> {item.post["date"]}</Text>
     </View> 
     
-   </View> 
-     )
-   
-   }
+  </View> 
+    )
+  
+  }
 
   render() {
- 
+
     const { navigate } = this.props.navigation
     return ( 
 
-     <View style={styles.mainContent}  >
-       {this.state.fontLoaded &&  
+      <View style={styles.mainContent}  >
+        {this.state.fontLoaded &&  
       <View style={styles.createPostContainer}>
 
         <TouchableOpacity style={styles.createPostLabelContainer}  onPress={() => navigate('TakePhoto')}>
@@ -168,17 +161,17 @@ export default class SocialFeedScreen extends React.Component {
             color='#085947'
             style={{paddingRight: 1}}
           />
-         </TouchableOpacity>  
+        </TouchableOpacity>  
 
 
       </View>  
-       }
+      }
       
-     
+    
 
     <ScrollView style = {styles.scrollContainer}>  
     
-       <FlatList 
+      <FlatList 
             style={styles.list}
             data = {SOCIAL_FEED_MOCK_DATA}
             style={styles.container}
@@ -210,7 +203,7 @@ const styles = StyleSheet.create({
   },
   createPostLabel: {
     fontSize: 18,
-    color: '#03A9F4',
+    color: '#BC261A',
     fontWeight: 'bold',
     fontFamily: 'OpenSans-SemiBoldItalic'
 
@@ -262,6 +255,8 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     justifyContent: 'space-around',
     marginBottom: 10,
+    marginLeft: 5,
+    marginRight: 5
 
   },
 
