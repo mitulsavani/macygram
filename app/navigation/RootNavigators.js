@@ -16,7 +16,7 @@ const RootNavigators = StackNavigator({
     screen: HomeTabs
   } 
 }, {
-    initialRouteName: 'Intro',
+    initialRouteName: 'Home',
     mode: 'modal',
     headerMode: 'none'
   });

@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-import PaymentsScreen from './app/Screens/PaymentsScreen';
-import PaymentMethods from './app/Screens/PaymentMethods';
+// import PaymentsScreen from './app/Screens/PaymentsScreen';
+// import PaymentMethods from './app/Screens/PaymentMethods';
 import RootNavigators from '../macygram/app/navigation/RootNavigators';
  
 
@@ -18,7 +18,7 @@ export default class App extends React.Component {
   render() {
 
     return(
-      <PaymentMethods/>
+      <RootNavigators/>
     );
   }
 }

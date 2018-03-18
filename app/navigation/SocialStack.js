@@ -4,6 +4,8 @@ import SocialFeedScreen from '../Screens/SocialFeedScreen';
 import ProfileScreen from '../Screens/ProfileScreen';
 import TakePhoto from '../Screens/TakePhoto'
 import ImageSelector from '../Screens/ImageSelector'
+import CardStack from '../navigation/CardStack'
+
 
 const SocialStack = StackNavigator({
   Social: {
@@ -17,7 +19,8 @@ const SocialStack = StackNavigator({
   },
   ImageSelector : {
     screen: ImageSelector
-  }
+  },
+
 
 });
 

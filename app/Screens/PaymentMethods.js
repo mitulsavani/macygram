@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 export default class PaymentMethods extends Component {
+
+
+    static navigationOptions = ({ navigation }) => ({
+        title: 'Select Your Payment',
+        headerTintColor: '#BC261A',
+        headerTitleStyle: {
+          fontSize: 20,
+        },
+      });
+    
     render() {
+        const { navigate } = this.props.navigation
         return (
             <Container>
                 <Header />
                 <Content>
                     <Card>
-                        <TouchableOpacity>
+                        <TouchableOpacity    onPress={() => navigate('PaymentScreens')}  >
                         <CardItem>
                             <Left>
                                 <Thumbnail source={{ uri: 'https://cdn1.iconfinder.com/data/icons/credit-card-icons/512/visa.png' }} />
@@ -22,12 +33,12 @@ export default class PaymentMethods extends Component {
                             <Image source={{ uri: 'https://www.inspiruscu.org/wp-content/uploads/2016/04/signature_card.jpg' }} style={{ height: 200, width: null, flex: 1 }} />
                         </CardItem>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity    onPress={() => navigate('PaymentScreens')}   >
                         <CardItem>
                             <Left>
                                 <Thumbnail source={{ uri: 'https://satoshiwatch.com/wp-content/uploads/2017/03/DASH-Icon.png' }} />
                                 <Body>
-                                    <Text>Dash Card</Text>
+                                    <Text>Dash Wallet</Text>
                                     <Text note>Peter Hanks</Text>
                                 </Body>
                             </Left>

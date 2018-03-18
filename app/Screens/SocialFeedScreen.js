@@ -41,6 +41,7 @@ export default class SocialFeedScreen extends React.Component {
 
   // this will render one post
   renderItem = ({item}) => {
+    const { navigate } = this.props.navigation
 
     const { liked, commented } = this.state
 
@@ -113,6 +114,7 @@ export default class SocialFeedScreen extends React.Component {
         <Text style = {styles.priceText}> {item.post["price"]}</Text>
     </View> 
 
+   <TouchableOpacity  onPress={() => navigate('PaymentMethod')}> 
     <View style = {styles.buyButtonContainer}>
       <Icon
             type = "ionicon"
@@ -121,6 +123,7 @@ export default class SocialFeedScreen extends React.Component {
         />
         <Text style={styles.postButtonText}>{item.likes}</Text>    
     </View>
+   </TouchableOpacity> 
     
     
     </View>

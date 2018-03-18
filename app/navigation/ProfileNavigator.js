@@ -5,6 +5,7 @@ import SearchProductScreen from '../Screens/SearchProductScreen';
 import TakePhoto from '../Screens/TakePhoto';
 
 
+
 const ProfileNavigator = StackNavigator({
   ProfileStack: {
     screen: ProfileStack
@@ -14,8 +15,8 @@ const ProfileNavigator = StackNavigator({
   },
   SearchPhoto: {
     screen: TakePhoto
-  }
- 
+  },
+
 }, {
   initialRouteName: 'ProfileStack',
   mode: 'modal',

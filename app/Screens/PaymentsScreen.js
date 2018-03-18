@@ -24,6 +24,16 @@ input: {
 
 
 export default class Example extends Component {
+
+    static navigationOptions = ({ navigation }) => ({
+        title: 'Enter Card Number',
+        headerTintColor: '#BC261A',
+        headerTitleStyle: {
+          fontSize: 20,
+        },
+      });
+
+
 state = { useLiteCreditCardInput: false };
 
     _onChange = (formData) => console.log(JSON.stringify(formData, null, " "));
