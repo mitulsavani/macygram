@@ -146,7 +146,7 @@ export default class SocialFeedScreen extends React.Component {
         {this.state.fontLoaded &&  
       <View style={styles.createPostContainer}>
         <TouchableOpacity style={styles.createPostLabelContainer}>
-          <Text style={styles.createPostLabel}>Search Product</Text>
+          <Text style={styles.createPostLabel}>Create Post</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.addPhotoIcon}>
           <Ionicons
