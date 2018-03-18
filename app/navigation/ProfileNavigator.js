@@ -2,6 +2,7 @@ import { StackNavigator } from 'react-navigation';
 
 import ProfileStack from '../navigation/ProfileStack';
 import SearchProductScreen from '../Screens/SearchProductScreen';
+import TakePhoto from '../Screens/TakePhoto';
 
 
 const ProfileNavigator = StackNavigator({
@@ -11,6 +12,9 @@ const ProfileNavigator = StackNavigator({
   Search: {
     screen: SearchProductScreen
   },
+  SearchPhoto: {
+    screen: TakePhoto
+  }
  
 }, {
   initialRouteName: 'ProfileStack',

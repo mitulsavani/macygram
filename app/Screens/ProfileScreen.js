@@ -27,7 +27,7 @@ export default class ProfileScreen extends React.Component {
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
             <Text style={styles.createPostLabel}>Search Product</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('TakePhoto')}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchPhoto')}>
             <Ionicons
               name='ios-camera'
               size={30}

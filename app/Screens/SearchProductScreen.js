@@ -107,7 +107,7 @@ export default class SearchProductScreen extends React.Component {
                 </TouchableOpacity>
             </View>
             <View style={styles.uploadImageContainer}> 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('TakePhoto')}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchPhoto')}>
                 <Ionicons
                   name='ios-camera'
                   size={30}
