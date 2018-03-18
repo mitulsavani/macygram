@@ -3,31 +3,24 @@ import { StyleSheet, Text, View } from 'react-native';
 import IntroScreen from './app/Screens/IntroScreen';
 import ProfileScreen from './app/Screens/ProfileScreen';
 
+import SocialFeedScreen from '../macygram/app/Screens/SocialFeedScreen'
+
+import RootNavigator from '../macygram/app/navigation/HomeTabs';
+
 export default class App extends React.Component {
   constructor(props){
     super(props);
-
-    this.state = {
-      screen: 'Intro'
-    }
   }
 
 
   render() {
 
-    const {screen} = this.state
+    return(
+      <RootNavigator/>
+    
 
-    if(screen === 'Intro'){
-      return <ProfileScreen/>
-    }
-    else 
-    {
-      return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app! Jahon</Text>
-        </View>
-      )
-    }
+   
+    );
   }
 }
 
