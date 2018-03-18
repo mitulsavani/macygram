@@ -17,8 +17,6 @@ export default class ImageSelector extends React.Component {
 
     return (
 
-    <View style={styles.container}>
-
       <TouchableOpacity onPress={this._pickImage}>
 
         <Icon
@@ -29,8 +27,6 @@ export default class ImageSelector extends React.Component {
         />
 
       </TouchableOpacity>
-
-    </View>
 
     );
   }
@@ -63,7 +59,7 @@ export default class ImageSelector extends React.Component {
   };
 }
 
-//Touch up design later.
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -78,3 +74,4 @@ const styles = StyleSheet.create({
     padding: 10
   }
 })
+*/
