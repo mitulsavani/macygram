@@ -1,24 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image } from 'react-native';
-// import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements'
 
 
 export default class ProfileScreen extends React.Component {
-  // static navigationOptions = ({ navigation }) => {
-  //   return {
-  //     headerVisible: navigation.state.params ? navigation.state.params.isHeaderShow : false,
-  //     title: 'Profile',
-  //     headerTintColor: '#2F80ED',
-  //     headerTitleStyle: {
-  //       fontSize: 20,
-  //     },
-  //     headerStyle: {
-  //       backgroundColor: '#FAFAFA',
-  //     },
-  //   }
-  // }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerVisible: navigation.state.params ? navigation.state.params.isHeaderShow : false,
+      title: 'Profile',
+      headerTintColor: '#2F80ED',
+      headerTitleStyle: {
+        fontSize: 20,
+      },
+      headerStyle: {
+        backgroundColor: '#FAFAFA',
+      },
+    }
+  }
   render() {
-    // const { navigate } = this.props.navigation
+    const { navigate } = this.props.navigation
     return (
       <ScrollView style={{backgroundColor: '#fff'}}>
         <View style={styles.mainContainer}>
@@ -52,15 +52,15 @@ export default class ProfileScreen extends React.Component {
                       <Text style={styles.profileStatsText}>following</Text>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.profileEditContainer}>
-                    {/* <Button
-                      title='Edit Profile'
-                      buttonStyle={styles.profileEditButton}
-                      containerStyle={{ marginBottom: 10, marginTop:10 }}
-                      textStyle={styles.profileEditText}
-                      // onPress={() => this.props.navigation.navigate('EditProfile')}
-                    /> */}
-                  </View>
+                  <View style = {styles.editButtonContainer}>
+                    <TouchableOpacity
+                      style={styles.toggleButton}
+                      onPress={() => navigate('EditProfile')}
+                     >
+                      <Text style={styles.toggleText}> Edit Profile </Text>
+                     </TouchableOpacity>
+
+                 </View>
                 </View>
               </View>
               <View style={styles.profileInfoBottomContainer}>
@@ -185,6 +185,27 @@ const styles = StyleSheet.create({
     width: 170,
     height: 40,
     borderRadius: 0,
-  }
+  },
+  editButtonContainer : {
+    flex: 1,
+    width: 150,
+    height: 30,
+    marginLeft: 65,
+
+  },
+  toggleText: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: 'black',
+  },
+  toggleButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    padding: 5,
+    marginBottom: 4,
+    borderWidth: 1,
+    borderRadius: 5,
+  },
 
 });
