@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera, Permissions } from 'expo';
+import { FontAwesome, SimpleLineIcons, IonIcons } from '@expo/vector-icons';
+import { Button, Icon } from 'react-native-elements';
 
 export default class TakePhoto extends React.Component {
 
@@ -19,7 +21,7 @@ export default class TakePhoto extends React.Component {
     if (hasCameraPermission === null) {
       return <View />;
     } else if (hasCameraPermission === false) {
-      return <Text>No access to camera</Text>;
+      return <Text>Please grant MacyGram access to the camera in your privacy settings.</Text>;
     } else {
       return (
         <View style={{ flex: 1 }}>
@@ -43,10 +45,12 @@ export default class TakePhoto extends React.Component {
                       : Camera.Constants.Type.back,
                   });
                 }}>
-                <Text
-                  style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                  {' '}Flip{' '}
-                </Text>
+                <Icon
+                  name='refresh'
+                  type='simple-line-icon'
+                  size={23}
+                  style={{ height: 100, width: 100, backgroundColor: 'transparent', padding: 10, alignItems: 'center' }}>
+                </Icon>
               </TouchableOpacity>
             </View>
           </Camera>
