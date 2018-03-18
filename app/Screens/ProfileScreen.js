@@ -15,32 +15,32 @@ export default class ProfileScreen extends React.Component {
       },
       headerStyle: {
         backgroundColor: '#FAFAFA',
+        borderBottomWidth: 0.5, borderBottomColor: '#aaaaaa'
       },
     }
   }
   render() {
     const { navigate } = this.props.navigation
     return (
-      <ScrollView style={{backgroundColor: '#fff'}}>
-      <View style={styles.createPostContainer}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('CreatePost')}>
-              <Text style={styles.createPostLabel}>Find your next item</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('CreatePost')}>
-            <Icon
-                name='picture'
-                type='simple-line-icon'
-                size={23}
-                iconStyle={styles.photoPostIcon}
-              />
-            </TouchableOpacity>
-          </View>
+      <ScrollView style={{ backgroundColor: '#fff' }}>
+        <View style={styles.createPostContainer}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
+            <Text style={styles.createPostLabel}>Search Product</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('TakePhoto')}>
+            <Ionicons
+              name='ios-camera'
+              size={30}
+              style={styles.photoPostIcon}
+            />
+          </TouchableOpacity>
+        </View>
         <View style={styles.mainContainer}>
           <View style={styles.profileHeaderContainer}>
             <View style={styles.profileHeaderCoverContainer}>
               <Image
                 style={styles.coverImage}
-                source={{uri: "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/1200/600/90/secure.parksandresorts.wdpromedia.com/media/abd/refresh/north-america/san-francisco-tours/adventures-by-disney-north-america-san-francisco-long-weekend-hero-01-golden-gate-bridge.jpg"}}
+                source={{ uri: "https://secure.parksandresorts.wdpromedia.com/resize/mwImage/1/1200/600/90/secure.parksandresorts.wdpromedia.com/media/abd/refresh/north-america/san-francisco-tours/adventures-by-disney-north-america-san-francisco-long-weekend-hero-01-golden-gate-bridge.jpg" }}
               />
             </View>
             <View style={styles.profileInfoContainer}>
@@ -48,7 +48,7 @@ export default class ProfileScreen extends React.Component {
                 <View style={styles.profileAvatarContainer}>
                   <Image
                     style={styles.avatarImage}
-                    source={{uri: "https://avatars3.githubusercontent.com/u/5275250?s=460&v=4"}}
+                    source={{ uri: "https://avatars3.githubusercontent.com/u/5275250?s=460&v=4" }}
                   />
                 </View>
                 <View style={styles.profileStatsEditContainer}>
@@ -66,15 +66,15 @@ export default class ProfileScreen extends React.Component {
                       <Text style={styles.profileStatsText}>following</Text>
                     </TouchableOpacity>
                   </View>
-                  <View style = {styles.editButtonContainer}>
+                  <View style={styles.editButtonContainer}>
                     <TouchableOpacity
                       style={styles.toggleButton}
                       onPress={() => navigate('EditProfile')}
-                     >
+                    >
                       <Text style={styles.toggleText}> Edit Profile </Text>
-                     </TouchableOpacity>
+                    </TouchableOpacity>
 
-                 </View>
+                  </View>
                 </View>
               </View>
               <View style={styles.profileInfoBottomContainer}>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     width: 90,
     borderRadius: 45,
     borderWidth: 1,
-    borderColor: '#cccccc', 
+    borderColor: '#cccccc',
     marginTop: -40,
   },
   profileStatsEditContainer: {
@@ -143,13 +143,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  profileStatsView:{
+  profileStatsView: {
     flex: 1,
     marginTop: 10,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  profileStatsNumbers :{
+  profileStatsNumbers: {
     fontSize: 16,
   },
   profileStatsText: {
@@ -174,8 +174,8 @@ const styles = StyleSheet.create({
   profileInfoBottomContainer: {
     height: 60,
     paddingLeft: 15,
-    justifyContent: 'space-between', 
-    paddingBottom: 10,   
+    justifyContent: 'space-between',
+    paddingBottom: 10,
   },
   profileName: {
     fontSize: 20,
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 0,
   },
-  editButtonContainer : {
+  editButtonContainer: {
     flex: 1,
     width: 150,
     height: 30,
@@ -228,20 +228,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fcfcfd',
-    borderBottomWidth: 0.3,
-    borderBottomColor: '#aaaaaa',
   },
-  createPostLabel:{
+  createPostLabel: {
     color: '#2F80ED',
     fontSize: 17,
     fontWeight: 'bold',
     marginLeft: 20,
-
   },
   photoPostIcon: {
     marginRight: 20,
-    color: '#ff99cc',
-    
+    color: '#085947',
+
   }
 
 });
