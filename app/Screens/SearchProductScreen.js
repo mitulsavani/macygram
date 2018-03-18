@@ -81,7 +81,7 @@ export default class SearchProductScreen extends React.Component {
             centerComponent={{
               text: 'Create Post',
               style: {
-                color: '#2F80ED', fontSize: 20,
+                color: 'red', fontSize: 20,
                 fontWeight: 'bold',
               }
             }}

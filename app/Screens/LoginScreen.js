@@ -7,12 +7,20 @@ import { LinearGradient } from 'expo';
 
 
 export default class LoginScreen  extends React.Component {
-static navigationOptions = {
-    title: "Login",
-    headerStyle: {backgroundColor: '#4C3ADC', borderBottomWidth: 0},
+// static navigationOptions = {
+//     title: "Login",
+//     headerStyle: {backgroundColor: '#4C3ADC', borderBottomWidth: 0},
+//     headerTintColor: 'white',
+//     headerTitleStyle: { color: 'white', fontSize: 20 }
+// };
+
+
+static navigationOptions = ({ navigation }) => ({
+    title: 'Login',
+    headerStyle: {backgroundColor: '#b20a2c', borderBottomWidth: 0},
     headerTintColor: 'white',
     headerTitleStyle: { color: 'white', fontSize: 20 }
-};
+  });
 
     constructor(props){
     super(props);
@@ -24,6 +32,7 @@ static navigationOptions = {
 }
 
 onSubmitButtonPressed = () => {
+    const { navigate } = this.props.navigation
     const { screen,email, password } = this.state
     if (email !== '' && password !== '') {
         Keyboard.dismiss();
@@ -47,6 +56,8 @@ onSubmitButtonPressed = () => {
 
 render() {
     const{ screen, email, password} = this.state;
+    const { navigate } = this.props.navigation
+
 
     return (
     <LinearGradient

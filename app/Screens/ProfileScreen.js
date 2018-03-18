@@ -9,7 +9,7 @@ export default class ProfileScreen extends React.Component {
     return {
       headerVisible: navigation.state.params ? navigation.state.params.isHeaderShow : false,
       title: 'Profile',
-      headerTintColor: '#2F80ED',
+      headerTintColor: 'red',
       headerTitleStyle: {
         fontSize: 20,
       },
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcfcfd',
   },
   createPostLabel: {
-    color: '#2F80ED',
+    color: 'red',
     fontSize: 17,
     fontWeight: 'bold',
     marginLeft: 20,

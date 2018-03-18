@@ -6,6 +6,12 @@ import MACY_LOGO from '../../assets/Images/macys-logo-transparent.png';
 
 export default class IntroScreen extends React.Component {
 
+    static navigationOptions = {
+        title: "",
+        header: null
+      };
+    
+
     constructor(props) {
         super(props);
 
@@ -14,6 +20,7 @@ export default class IntroScreen extends React.Component {
         }
     }
     render() {
+        const { navigate } = this.props.navigation
         const { screen } = this.state
 
     // if (screen === 'LoginScreen') {

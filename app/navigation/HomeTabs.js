@@ -44,7 +44,7 @@ const HomeTabs = TabNavigator({
   tabBarOptions: {
     showIcon: true,
     showLabel: true,
-    activeTintColor: '#03A9F4',
+    activeTintColor: 'red',
     inactiveTintColor: '#999999',
     style: {
       backgroundColor: '#ffffff',

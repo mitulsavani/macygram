@@ -10,7 +10,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 export default class SignupScreen extends React.Component {
     static navigationOptions = {
         title: "Let's get Started",
-        headerStyle: { backgroundColor: '#4C3ADC', borderBottomWidth: 0 },
+        headerStyle: { backgroundColor: '#b20a2c', borderBottomWidth: 0 },
         headerTintColor: 'white',
         headerTitleStyle: { color: 'white', fontSize: 20 }
     };
