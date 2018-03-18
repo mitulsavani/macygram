@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "my-new-project",
-    "description": "This project is really great.",
-    "slug": "my-new-project",
+    "name": "MacyGram",
+    "description": "One of MobileSpace's projects for SF Hacks 2018.",
+    "slug": "MacyGram",
     "privacy": "public",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],
