@@ -33,7 +33,7 @@ export default class PaymentMethods extends Component {
                             <Image source={{ uri: 'https://www.inspiruscu.org/wp-content/uploads/2016/04/signature_card.jpg' }} style={{ height: 200, width: null, flex: 1 }} />
                         </CardItem>
                         </TouchableOpacity>
-                        <TouchableOpacity    onPress={() => navigate('PaymentScreens')}   >
+                        <TouchableOpacity    onPress={() => navigate('DashScreens')}   >
                         <CardItem>
                             <Left>
                                 <Thumbnail source={{ uri: 'https://satoshiwatch.com/wp-content/uploads/2017/03/DASH-Icon.png' }} />

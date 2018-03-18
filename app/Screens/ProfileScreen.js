@@ -55,15 +55,15 @@ export default class ProfileScreen extends React.Component {
                   <View style={styles.profileStatsContainer}>
                     <TouchableOpacity style={styles.profileStatsView}>
                       <Text style={styles.profileStatsNumbers}>1</Text>
-                      <Text style={styles.profileStatsText}>posts</Text>
+                      <Text style={styles.profileStatsText}>Posts</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.profileStatsView}>
-                      <Text style={styles.profileStatsNumbers}>1550</Text>
-                      <Text style={styles.profileStatsText}>followers</Text>
+                      <Text style={styles.profileStatsNumbers}>150</Text>
+                      <Text style={styles.profileStatsText}>Buy</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.profileStatsView}>
                       <Text style={styles.profileStatsNumbers}>250</Text>
-                      <Text style={styles.profileStatsText}>following</Text>
+                      <Text style={styles.profileStatsText}>Sell</Text>
                     </TouchableOpacity>
                   </View>
                   <View style={styles.editButtonContainer}>
