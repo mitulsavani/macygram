@@ -149,10 +149,11 @@ export default class SocialFeedScreen extends React.Component {
      <View style={styles.mainContent}  >
        {this.state.fontLoaded &&  
       <View style={styles.createPostContainer}>
-        <TouchableOpacity style={styles.createPostLabelContainer}>
+
+        <TouchableOpacity style={styles.createPostLabelContainer}  onPress={() => navigate('TakePhoto')}>
           <Text style={styles.createPostLabel}>Search Product</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.addPhotoIcon}>
+        <TouchableOpacity style={styles.addPhotoIcon}  onPress={() => navigate('TakePhoto')} >
           <Ionicons
             name='ios-camera'
             size={30}
@@ -160,6 +161,16 @@ export default class SocialFeedScreen extends React.Component {
             style={{paddingRight: 1}}
           />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.addPhotoIcon}  onPress={() => navigate('ImageSelector')} >
+        <Ionicons
+            name='md-image'
+            size={30}
+            color='#085947'
+            style={{paddingRight: 1}}
+          />
+         </TouchableOpacity>  
+
+
       </View>  
        }
       
