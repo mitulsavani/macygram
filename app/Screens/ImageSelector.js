@@ -42,7 +42,7 @@ export default class ImageSelector extends React.Component {
     });
     
     if (result.cancelled) {
-      console.log('got here');
+      console.log('Image selection canceled');
       return;
     }
 
