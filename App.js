@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import IntroScreen from './app/Screens/IntroScreen';
+import ProfileScreen from './app/Screens/ProfileScreen';
 
 export default class App extends React.Component {
   constructor(props){
@@ -17,7 +18,7 @@ export default class App extends React.Component {
     const {screen} = this.state
 
     if(screen === 'Intro'){
-      return <IntroScreen/>
+      return <ProfileScreen/>
     }
     else 
     {
