@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button, Icon } from 'react-native-elements'
+import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
 
 export default class ProfileScreen extends React.Component {
@@ -21,6 +22,19 @@ export default class ProfileScreen extends React.Component {
     const { navigate } = this.props.navigation
     return (
       <ScrollView style={{backgroundColor: '#fff'}}>
+      <View style={styles.createPostContainer}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('CreatePost')}>
+              <Text style={styles.createPostLabel}>Find your next item</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('CreatePost')}>
+            <Icon
+                name='picture'
+                type='simple-line-icon'
+                size={23}
+                iconStyle={styles.photoPostIcon}
+              />
+            </TouchableOpacity>
+          </View>
         <View style={styles.mainContainer}>
           <View style={styles.profileHeaderContainer}>
             <View style={styles.profileHeaderCoverContainer}>
@@ -207,5 +221,27 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
   },
+  createPostContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    height: 50,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fcfcfd',
+    borderBottomWidth: 0.3,
+    borderBottomColor: '#aaaaaa',
+  },
+  createPostLabel:{
+    color: '#2F80ED',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginLeft: 20,
+
+  },
+  photoPostIcon: {
+    marginRight: 20,
+    color: '#ff99cc',
+    
+  }
 
 });
