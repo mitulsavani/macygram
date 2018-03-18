@@ -5,7 +5,7 @@ import { TabNavigator } from 'react-navigation';
 import { SimpleLineIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 import SocialNavigator from '../navigation/SocialNavigator';
-import ProfileNavigator from '../navigation/SocialNavigator';
+import ProfileNavigator from '../navigation/ProfileNavigator';
 
 const HomeTabs = TabNavigator({
   SocialTab: {

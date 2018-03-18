@@ -1,13 +1,13 @@
 import { StackNavigator } from 'react-navigation';
 
-import IntroScreen from '../Screens/IntroScreen';
+import ProfileScreen from '../Screens/ProfileScreen';
 
 
 
 
 const ProfileStack = StackNavigator({
   Profile: {
-    screen: IntroScreen
+    screen: ProfileScreen
   },
 
   

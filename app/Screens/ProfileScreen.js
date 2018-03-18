@@ -1,23 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image } from 'react-native';
-import { Button } from 'react-native-elements'
+// import { Button } from 'react-native-elements'
 
 
 export default class ProfileScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerVisible: navigation.state.params ? navigation.state.params.isHeaderShow : false,
-      title: 'Profile',
-      headerTintColor: '#2F80ED',
-      headerTitleStyle: {
-        fontSize: 20,
-      },
-      headerStyle: {
-        backgroundColor: '#FAFAFA',
-      },
-    }
-  }
+  // static navigationOptions = ({ navigation }) => {
+  //   return {
+  //     headerVisible: navigation.state.params ? navigation.state.params.isHeaderShow : false,
+  //     title: 'Profile',
+  //     headerTintColor: '#2F80ED',
+  //     headerTitleStyle: {
+  //       fontSize: 20,
+  //     },
+  //     headerStyle: {
+  //       backgroundColor: '#FAFAFA',
+  //     },
+  //   }
+  // }
   render() {
+    // const { navigate } = this.props.navigation
     return (
       <ScrollView style={{backgroundColor: '#fff'}}>
         <View style={styles.mainContainer}>
@@ -52,13 +53,13 @@ export default class ProfileScreen extends React.Component {
                     </TouchableOpacity>
                   </View>
                   <View style={styles.profileEditContainer}>
-                    <Button
+                    {/* <Button
                       title='Edit Profile'
                       buttonStyle={styles.profileEditButton}
                       containerStyle={{ marginBottom: 10, marginTop:10 }}
                       textStyle={styles.profileEditText}
-                      onPress={() => this.props.navigation.navigate('EditProfile')}
-                    />
+                      // onPress={() => this.props.navigation.navigate('EditProfile')}
+                    /> */}
                   </View>
                 </View>
               </View>
