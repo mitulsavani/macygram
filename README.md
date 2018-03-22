@@ -1,5 +1,5 @@
 # macygram
-Macy's Gram
+Macygram
 
 This application is programmed in React Native and utilizes the Expo libraries.
 React Native allows for cross-platform development of mobile applications using JavaScript.
